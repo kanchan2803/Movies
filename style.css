@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /* kanchan dixit project */
+
+  
+  body {
+    width: 100%;
+    background: #0c111b;
+    position: relative;
+    font-family: roboto, sans-serif;
+  }
+
+  .header{
+    background-image: url(bg.jpg);
+    height: 50vh;
+    background-position: center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-color: rgb(21, 17, 48);
+    position: relative;
+}
+
+.searchBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:  translate(-50%,-50%);
+    background: #2f3640;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.searchBox:hover > .search {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.searchBox:hover > .searchButton {
+  background: white;
+  color : #2f3640;
+}
+
+.searchButton {
+    color: white;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.search {
+    border:none;
+    background: none;
+    outline:none;
+    float:left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+
+}
+
+@media screen and (max-width: 620px) {
+.searchBox:hover > .search {
+    width: 150px;
+    padding: 0 6px;
+}
+
+}
+
+  .title {
+    color: #fff;
+    opacity: 0.9;
+    padding-left: 4%;
+    text-transform: capitalize;
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  .pre-btn,
+  .nxt-btn {
+    position: absolute;
+    top: 0;
+    width: 5%;
+    height: 100%;
+    z-index: 2;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .pre-btn {
+    left: 0;
+    background: linear-gradient(to right, #0c111b 0%, #0c111b00);
+  }
+  
+  .nxt-btn {
+    right: 0;
+    background: linear-gradient(to left, #0c111b 0%, #0c111b00);
+  }
+  
+  .pre-btn i,
+  .nxt-btn i {
+    width: 15px;
+    height: 20px;
+    opacity: 0;
+  }
+  
+  .pre-btn:hover i,
+  .nxt-btn:hover i {
+    opacity: 1;
+    color: white;
+  }
+
+.movies-list {
+    width: 100%;
+    height: 220px;
+    position: relative;
+    margin: 10px 0 20px;
+  }
+  
+  .card-container {
+    position: relative;
+    width: 92%;
+    padding-left: 10px;
+    height: 220px;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: visible;
+    scroll-behavior: smooth;
+  }
+  
+  .card-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .card {
+    position: relative;
+    min-width: 150px;
+    width: 150px;
+    height: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 10px;
+    transition: 0.5s;
+  }
+  
+  .card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .card:hover {
+    transform: scale(1.1);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #2f3640 transparent;
+  }
+
+  .card::-webkit-scrollbar {
+    width: 5px;
+}
+
+.card::-webkit-scrollbar-thumb {
+    background-color: rgb(95, 94, 94);
+    border-radius: 5px;
+}
+
+  
+  .card:hover .card-body {
+    opacity: 1;
+  }
+  
+  .card-body {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: linear-gradient(to bottom, rgba(4, 8, 15, 0), #192133 90%);
+    padding: 10px;
+    transition: 0.5s;
+  }
+
+  .name{
+    color: antiquewhite;
+    -webkit-text-stroke: 0.5px #0c111b;
+  }
+
+  .des{
+    color: whitesmoke;
+    font-style: oblique;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  .Genre{
+    color: azure;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  .Year , .imdbRating{
+    color: aliceblue;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+  }
+
+  @media screen and (max-width: 620px){
+    .movies-list{
+      height: auto;
+    }
+
+    .card-container{
+     height: auto;
+     flex-direction: column;
+     justify-content: space-between;
+    }
+    
+    .card{
+     height: 350px; 
+     width: auto;
+     margin-top: 15px;
+     margin-bottom: 15px;
+    }
+    
+    .name{
+      font-size: 50px;
+    }
+
+    .Genre,.Year , .imdbRating{
+      font-size: large;
+    }
+    .des{
+      font-size: small;
+    }
+
+    button{
+      display: hidden;
+    }
+  }
